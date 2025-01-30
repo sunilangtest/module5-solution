@@ -1,0 +1,74 @@
+<div ng-controller="SignupController as reg">
+  <form name="regForm" novalidate>
+    <div class="row form-row">
+      <div class="col-sm-6">
+        <label>First name</label>
+        <input type="text" name="fname" ng-model="reg.user.fname"
+        placeholder="Enter First Name" class="form-control" required>
+        <span style="color:red" ng-if="(regForm.fname.$error.required) &&
+                                      regForm.fname.$touched">
+          <span>Please enter first name</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-sm-6">
+        <label>Last name</label>
+        <input type="text" name="lname" ng-model="reg.user.lname"
+        placeholder="Enter Last Name" class="form-control" required>
+        <span style="color:red" ng-if="(regForm.lname.$error.required) &&
+                                      regForm.lname.$touched">
+          <span>Please enter lname name</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-sm-6">
+        <label>Email address</label>
+        <input type="email" name="email" ng-model="reg.user.email"
+        placeholder="Enter email address" class="form-control" required>
+        <span style="color:red" ng-if="(regForm.email.$invalid) &&
+                                      regForm.email.$touched">
+          <span ng-if="regForm.email.$error.required">Email is required</span>
+          <span ng-if="regForm.email.$error.email">Please enter email address</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-sm-6">
+        <label>Phone number</label>
+        <input type="text" name="phonenumber" ng-model="reg.user.phonenumber"
+        placeholder="Enter phone number" pattern="(\d{3})-(\d{3})-(\d{4})" class="form-control" required>
+        <span style="color:red" ng-if="(regForm.phonenumber.$invalid) &&
+                                      regForm.phonenumber.$touched">
+          <span>phone number must be in the format ###-###-####</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="row form-row">
+      <div class="col-sm-6">
+        <label>Menu number</label>
+        <input type="text" name="menu number" ng-model="reg.user.menunumber"
+        placeholder="Enter First menu number" class="form-control">
+
+      </div>
+    </div>
+
+
+    <div class="row form-row text-center">
+      <div class="col-sm-6">
+
+        <button ng-disabled="regForm.$invalid" class="btn btn-primary"
+         ng-click="reg.submit()">submit</button>
+
+      </div>
+    </div>
+  </form>
+
+</div>
+
+  <ui-view></ui-view>

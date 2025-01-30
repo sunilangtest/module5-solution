@@ -1,0 +1,16 @@
+<h3>User Information</h3>
+<div ng-if="myinfo.items">
+  <span>First name: {{myinfo.items.fname}}</span>
+  <br/>
+  <span>Last name: {{myinfo.items.lname}}</span>
+  <br/>
+  <span>Email: {{myinfo.items.email}}</span>
+  <br/>
+  <span>Phone number: {{myinfo.items.phonenumber}}</span>
+  <br/>
+  <span>Menu number: {{myinfo.items.menunumber}}</span>
+
+</div>
+<div ng-if="myinfo.allowsignup">
+  <a ui-sref="signup">Please SignUp</a>
+</div>

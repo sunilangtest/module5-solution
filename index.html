@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="usermgt">
+  <head>
+    <title>Module-5 Solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="appjs/angular.min.js"></script>
+    <script src="appjs/angular-ui-router.min.js"></script>
+    <script src="appjs/app.js"></script>
+    <script src="appjs/routes.js"></script>
+
+    <script src="appjs/items.component.js"></script>
+    <script src="appjs/menudata.service.js"></script>
+    <script src="appjs/MyinfoController.js"></script>
+    <script src="appjs/SignupController.js"></script>
+
+  </head>
+
+   <div class="container">
+    <h3>Module-5 Solution</h3>
+
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="nav-header">
+          </div>
+
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul>
+              <li>
+                <a ui-sref="myinfo">
+                  <br class="hidden-xs">My Info
+                </a>
+              </li>
+              <li>
+                <a ui-sref="signup">
+                  <br class="hidden-xs">Sign Up
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <ui-view></ui-view>
+
+</html>
