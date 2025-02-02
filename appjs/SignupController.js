@@ -3,8 +3,8 @@
 angular.module('usermgt')
 .controller('SignupController',SignupController);
 
-SignupController.$inject=['MenuDataService'];
-function SignupController(MenuDataService){
+SignupController.$inject=['MenuDataService','$location'];
+function SignupController(MenuDataService,$location){
   var reg=this;
   reg.menumessage=null;
   reg.submit=function()
@@ -15,9 +15,11 @@ function SignupController(MenuDataService){
       {
           localStorage.setItem('task',JSON.stringify(reg.user))
           alert('Your information has been saved');
+          $location.path("/myinfo");
       }
       else  {
           reg.menumessage="No such menu number exists";
+          alert('No such menu number exists');
       }
 
     }
